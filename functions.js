@@ -11,34 +11,55 @@ if (window.innerWidth <= 800) {
         switch (index) {
             case 0:
                 page.addEventListener('click', () => {
-                    page.style.top = '25%';
-                    setTimeout(() => {
-                        page.style.zIndex = openCardsInvertingZIndex(index);
-                    }, 2000)
+                    if (page.style.top === '25%') {
+                        page.style.top = '0';
+                        page.style.zIndex = '40';
+                    } else {
+                        page.style.top = '25%';
+                        setTimeout(() => {
+                            page.style.zIndex = '10';
+                        }, 2000)
+                    }
                 })
                 break;
             case 1:
                 page.addEventListener('click', () => {
-                    page.style.top = '0';
-                    setTimeout(() => {
-                        page.style.zIndex = openCardsInvertingZIndex(index);
-                    }, 2000)
-
+                    if (page.style.top === '0px') {
+                        page.style.top = '-25%';
+                        page.style.zIndex = '30';
+                    } else {
+                        page.style.top = '0';
+                        setTimeout(() => {
+                            page.style.zIndex = '20';
+                        }, 2000)
+                    }
                 })
                 break;
             case 2:
                 page.addEventListener('click', () => {
-                    page.style.bottom = '25%';
-                    setTimeout(() => {
-                        page.style.zIndex = openCardsInvertingZIndex(index);
-                    }, 2000)
-
+                    if (page.style.bottom === '25%') {
+                        page.style.bottom = '50%'
+                        page.style.zIndex = '20';
+                    } else {
+                        page.style.bottom = '25%';
+                        setTimeout(() => {
+                            page.style.zIndex = '30';
+                        }, 2000)
+                    }
                 })
                 break;
             case 3:
                 page.addEventListener('click', () => {
-                    page.style.bottom = '50%';
-                    page.style.zIndex = openCardsInvertingZIndex(index);
+                    if (page.style.bottom === '50%') {
+                        page.style.bottom = '75%'
+                        setTimeout(() => {
+                            page.style.zIndex = '10';
+                        }, 2000)
+                    } else {
+                        page.style.bottom = '50%';
+                        page.style.zIndex = '40';
+                    }
+
                 })
                 break;
         }
@@ -100,24 +121,7 @@ if (window.innerWidth <= 800) {
                         page.style.zIndex = '40';
                     }
                 })
-
                 break;
         }
     })
-}
-
-
-
-
-function openCardsInvertingZIndex (case_index) {
-    switch (case_index) {
-        case 0:
-            return '10';
-        case 1:
-            return '20';
-        case 2:
-            return '30';
-        case 3:
-            return '40';
-    }
 }
