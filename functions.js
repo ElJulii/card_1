@@ -106,7 +106,6 @@ if (window.innerWidth <= 800) {
                         }, 2000)
                     }
                 })
-
                 break;
             case 3:
                 page.addEventListener('click', () => {

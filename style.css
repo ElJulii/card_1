@@ -16,6 +16,7 @@ body {
     border: solid 2px;
     background-color: black;
     position: relative;
+    font-size: 45px;
 }
 
 .card__body {
@@ -24,7 +25,13 @@ body {
     height: 500px;
     border: solid 2px;
     background-color: white;
-
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px purple;
 }
 
 .card__page-one {
@@ -32,38 +39,41 @@ body {
     left: 50%;
     transition-property: left;
     transition-duration: 3s;
-
+    background: url("./photos/first_page.jpeg") center / 110%;
 }
 .card__page-two {
     z-index: 30;
     left: 25%;
     transition-property: left;
     transition-duration: 3s;
-
+    background-color: blueviolet;
 }
 .card__page-three {
     z-index: 20;
     right: 0;
     transition-property: right;
     transition-duration: 3s;
+    background-color: blueviolet;
 }
 .card__page-fourth {
     z-index: 10;
     right: 25%;
     transition-property: right;
     transition-duration: 3s;
+    background: url("./photos/last-page.jpeg") center / 110%;
 }
 
 @media screen and (max-width: 800px) {
     .card {
         padding-top: 10%;
         flex-direction: column;
+        font-size: 20px;
+        height: 130vh;
     }
-
-    .card__page-one, .card__page-two, .card__page-three, .card__page-fourth {
+    .card__body {
         left: 0;
-
     }
+
     .card__page-one {
         top: 0;
         transition-property: top;
